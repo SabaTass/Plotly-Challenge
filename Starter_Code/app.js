@@ -76,7 +76,7 @@ function getPlot(id) {
         };
   
         // set the layout for the bubble plot
-        var layout = {
+        var layout_b = {
             xaxis:{title: "OTU ID"},
             height: 600,
             width: 1000
@@ -86,19 +86,18 @@ function getPlot(id) {
         var data1 = [trace1];
   
         // create the bubble plot
-        Plotly.newPlot("bubble", data1, layout); 
+        Plotly.newPlot("bubble", data1, layout_b); 
   
         // The guage chart
   
         var data_g = [
           {
           domain: { x: [0, 1], y: [0, 1] },
-          value: wfreq,
+          value: parseFloat(wfreq),
           title: { text: `Weekly Washing Frequency ` },
           type: "indicator",
           
-          mode: "gauge+number+delta",
-          delta:  {'reference': 380},
+          mode: "gauge+number",
           gauge: { axis: { range: [null, 9] },
                    steps: [
                     { range: [0, 2], color: "yellow" },
